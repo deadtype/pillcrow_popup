@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset — likely dont need this site already has ti-->
+	<link rel="stylesheet" href="css/style.css"> <!-- Just include the style.scss in appropriate space in app -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+</head>
+
+<body>
+	<header>
+		<h1>Pillcrow Modal</h1>
+	</header>
+
+<div class='wrapper'>
+	<div class='fake_wine_image_container'>
+		<!-- put this into wine grid image -->
+		<a class="cd-popup-trigger top_right" href="#0"><img src="img/pillcrow.png" alt="Pillcrow"></a>
+	</div>
+	<div class='fake_search_results_container'>
+		<!-- put this into wine grid image -->
+		<a class="cd-popup-trigger bottom_right" href="#0"><img src="img/pillcrow.png" alt="Pillcrow"></a>
+	</div>
+</div>
+
+	<!-- put this somewhere else for modal -->
+
+	<div class="cd-popup" role="alert">
+		<div class="cd-popup-container">
+			<div class="image">
+				<img src="img/panorama.jpg" alt="Pillcrow">
+				<div class='pillcrow_image'>
+					<img src="img/pillcrow_white.png" alt="Pillcrow">
+				</div>
+				<div class='title'>
+					Pilcrow wines
+				</div>
+			</div>
+			<div class='content'>
+
+				<div class='copy'>
+					Order by the bottle, or mix and match with any other pilcrow wine on the newdistrict platform!
+				</div>
+			</div>
+			<a href="#0" class="cd-popup-close img-replace">Close</a>
+		</div> <!-- cd-popup-container -->
+	</div> <!-- cd-popup -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

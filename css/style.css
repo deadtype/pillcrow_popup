@@ -1,0 +1,207 @@
+@charset "UTF-8";
+/* -------------------------------- 
+
+Primary style — you dont need these for New District
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 100%;
+  font-family: "Lato", sans-serif;
+  color: #8f9cb5;
+  background-color: white; }
+
+a {
+  color: #35a785;
+  text-decoration: none; }
+
+header {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  background-color: #18A288;
+  color: #FFF; }
+  header h1 {
+    font-size: 20px;
+    font-size: 1.25rem; }
+
+.wrapper {
+  width: 90%;
+  margin: 3em auto;
+  text-align: center; }
+
+.fake_wine_image_container {
+  width: 300px;
+  height: 400px;
+  border: 1px solid lightgray;
+  position: relative;
+  float: left; }
+
+.fake_search_results_container {
+  width: 700px;
+  height: 300px;
+  border: 1px solid lightgray;
+  position: relative;
+  float: left;
+  margin-left: 1em; }
+
+/* -------------------------------- 
+
+Main components — you need these
+
+-------------------------------- */
+img {
+  width: 100%; }
+
+.img-replace {
+  /* replace text with an image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap; }
+
+.cd-popup-trigger {
+  position: absolute;
+  width: .75em; }
+  .cd-popup-trigger.top_right {
+    top: .75em;
+    right: .75em; }
+  .cd-popup-trigger.bottom_right {
+    bottom: .75em;
+    right: .75em; }
+
+.cd-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(94, 110, 141, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s; }
+  .cd-popup.is-visible {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+    transition: opacity 0.3s 0s, visibility 0s 0s; }
+
+.cd-popup-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 4em auto;
+  background: #FFF;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px);
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+  .cd-popup-container .image {
+    width: 100%;
+    display: inline-block;
+    position: relative; }
+  .cd-popup-container .pillcrow_image {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: .7em; }
+  .cd-popup-container .title {
+    position: absolute;
+    bottom: .75em;
+    left: .7em;
+    font-size: 1.4em;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase; }
+  .cd-popup-container .content {
+    width: 90%;
+    margin-top: .75em;
+    font-size: .9em;
+    padding: 1em 1em 1em;
+    display: inline-block;
+    line-height: 1.4; }
+  .cd-popup-container .cd-buttons:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .cd-popup-container .cd-buttons li {
+    float: left;
+    width: 50%; }
+  .cd-popup-container .cd-buttons a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #FFF;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s; }
+  .cd-popup-container .cd-buttons li:first-child a {
+    background: #fc7169;
+    border-radius: 0 0 0 .25em; }
+    .no-touch .cd-popup-container .cd-buttons li:first-child a:hover {
+      background-color: #fc8982; }
+  .cd-popup-container .cd-buttons li:last-child a {
+    background: #b6bece;
+    border-radius: 0 0 .25em 0; }
+    .no-touch .cd-popup-container .cd-buttons li:last-child a:hover {
+      background-color: #c5ccd8; }
+  .cd-popup-container .cd-popup-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px; }
+    .cd-popup-container .cd-popup-close::before, .cd-popup-container .cd-popup-close::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      width: 14px;
+      height: 3px;
+      background-color: #8f9cb5; }
+    .cd-popup-container .cd-popup-close::before {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      left: 8px; }
+    .cd-popup-container .cd-popup-close::after {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      right: 8px; }
+  .is-visible .cd-popup-container {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
+  @media only screen and (min-width: 1170px) {
+    .cd-popup-container {
+      margin: 8em auto; } }
